@@ -21,3 +21,17 @@ exports.getAllUsers =(req, res, next) => {
     })
     .catch(err => console.log(err))
 }
+
+exports.deleteUser = (req, res, next) => {
+    console.log(req.body)
+    const userid = req.body.id
+    User.findByPk(userid)
+    .then(user => {
+        return user.destroy();
+    })
+    .then(result => {
+        console.log('Destroyed success');
+        res.send('Destroyed success');
+    })
+    .catch(err => console.log(err));
+};
