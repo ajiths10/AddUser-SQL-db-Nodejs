@@ -12,3 +12,12 @@ exports.postUsers = (req, res, next) => {
         res.send('Successfully added')
     }).catch((err)=>console.log(err));
 }
+
+exports.getAllUsers =(req, res, next) => {
+    User.findAll()
+    .then(users => {
+        console.log(users)
+        res.send(users)
+    })
+    .catch(err => console.log(err))
+}

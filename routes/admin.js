@@ -8,5 +8,5 @@ router.use('/login',(req, res, next) => {
 })
 
 router.post('/adduser',adminController.postUsers);
-
+router.get('/getall',adminController.getAllUsers);
 module.exports = router;
