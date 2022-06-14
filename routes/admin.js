@@ -10,4 +10,5 @@ router.use('/login',(req, res, next) => {
 router.post('/adduser',adminController.postUsers);
 router.get('/getall',adminController.getAllUsers);
 router.post('/deleteuser', adminController.deleteUser);
+router.get('/getalldata',adminController.getAllData);
 module.exports = router;

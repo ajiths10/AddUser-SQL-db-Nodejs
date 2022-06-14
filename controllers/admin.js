@@ -35,3 +35,14 @@ exports.deleteUser = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
+
+exports.getAllData = ( req, res, next) => {
+    User.findAll()
+    .then(data => {
+        res.send({
+            users: data,
+            dummy: [1,2,3,4,5,6,7,8,9,0],
+        })
+    })
+    .catch(err=>{console.log(err)});
+}
