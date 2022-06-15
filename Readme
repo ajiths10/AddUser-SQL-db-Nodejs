@@ -1,0 +1,10 @@
+This is a test api runs on port 4000
+
+Created for frontend - https://github.com/ajiths10/HotelBooking-App-AsyncAwait
+
+Take clone FE - git clone https://github.com/ajiths10/HotelBooking-App-AsyncAwait.git
+
+
+Also change util -> database.js to your DB setup.
+
+//Ajith10
