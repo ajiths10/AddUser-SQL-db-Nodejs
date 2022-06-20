@@ -1,7 +1,7 @@
 const User = require('../models/user');
+const Moment = require('moment')
 
 exports.postUsers = (req, res, next) => {
-    console.log('===>', req.body)
     const title = req.body.title;
     const email = req.body.email;
     User.create({
@@ -13,7 +13,7 @@ exports.postUsers = (req, res, next) => {
     }).catch((err)=>console.log(err));
 }
 
-exports.getAllUsers =(req, res, next) => {
+exports.getAllUsers = (req, res, next) => {
     User.findAll()
     .then(users => {
         console.log(users)
@@ -41,7 +41,10 @@ exports.getAllData = ( req, res, next) => {
     .then(data => {
         res.send({
             users: data,
-            dummy: [1,2,3,4,5,6,7,8,9,0],
+            dummyData: {
+                auth: true,
+                Date: Moment().format('MM/DD/YYYY'),  
+            },
         })
     })
     .catch(err=>{console.log(err)});
